@@ -1,6 +1,6 @@
 metadata:
   image.type: 'kernel-ci'
-  image.url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.15/x86/x86_64_defconfig/
+  image.url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.15/x86/x86_64_defconfig/
   kernel.tree: mainline
   kernel.version: v4.15
   kernel.endian: little
@@ -20,10 +20,10 @@ metadata:
   device.type: qemu
   job.arch: x86
   job.name: mainline-master-v4.15-x86-x86_64_defconfig-qemu-qemu-boot
-  job.kernel_url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.15/x86/x86_64_defconfig/bzImage?raw=true
+  job.kernel_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.15/x86/x86_64_defconfig/bzImage?raw=true
   job.kernel_image: bzImage
-  job.modules_url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.15/x86/x86_64_defconfig/modules.tar.xz?raw=true
-  job.initrd_url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/x86/rootfs.cpio.gz?raw=true
+  job.modules_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.15/x86/x86_64_defconfig/modules.tar.xz?raw=true
+  job.initrd_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/x86/rootfs.cpio.gz?raw=true
   job.nfsrootfs_url: None
   job.dtb_url: None
 
@@ -54,10 +54,10 @@ actions:
     images:
       kernel:
         image_arg: '-kernel {kernel} -append "console=ttyS0,115200 root=/dev/ram0 debug verbose"'
-        url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.15/x86/x86_64_defconfig/bzImage?raw=true
+        url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.15/x86/x86_64_defconfig/bzImage?raw=true
       ramdisk:
         image_arg: '-initrd {ramdisk}'
-        url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/x86/rootfs.cpio.gz?raw=true
+        url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/x86/rootfs.cpio.gz?raw=true
 
 - boot:
     timeout:

@@ -1,7 +1,7 @@
 
 metadata:
   image.type: 'kernel-ci'
-  image.url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/
+  image.url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/
   kernel.tree: mainline
   kernel.version: v4.16-rc4
   kernel.endian: little
@@ -21,12 +21,12 @@ metadata:
   device.type: meson-gxl-s905x-libretech-cc
   job.arch: arm64
   job.name: mainline-master-v4.16-rc4-arm64-defconfig-meson-gxl-s905x-libretech-cc.dtb-meson-gxl-s905x-libretech-cc-boot
-  job.kernel_url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/Image?raw=true
+  job.kernel_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/Image?raw=true
   job.kernel_image: Image?raw=true
-  job.modules_url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/modules.tar.xz?raw=true
-  job.initrd_url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/arm64/rootfs.cpio.gz?raw=true
+  job.modules_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/modules.tar.xz?raw=true
+  job.initrd_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/arm64/rootfs.cpio.gz?raw=true
   job.nfsrootfs_url: None
-  job.dtb_url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/dtbs/amlogic/meson-gxl-s905x-libretech-cc.dtb?raw=true
+  job.dtb_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/dtbs/amlogic/meson-gxl-s905x-libretech-cc.dtb?raw=true
 
 device_type: meson-gxl-s905x-libretech-cc
 
@@ -52,16 +52,16 @@ actions:
       minutes: 2
     to: tftp
     kernel:
-      url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/Image?raw=true
+      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/Image?raw=true
       type: image
     ramdisk:
-      url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/arm64/rootfs.cpio.gz?raw=true
+      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/arm64/rootfs.cpio.gz?raw=true
       compression: gz
     modules:
-      url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/modules.tar.xz?raw=true
+      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/modules.tar.xz?raw=true
       compression: xz
     dtb:
-      url: https://github.com/BayLibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/dtbs/amlogic/meson-gxl-s905x-libretech-cc.dtb?raw=true
+      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/mainline/master/v4.16-rc4/arm64/defconfig/dtbs/amlogic/meson-gxl-s905x-libretech-cc.dtb?raw=true
     os: oe
 
 
