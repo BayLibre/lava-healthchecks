@@ -1,0 +1,70 @@
+metadata:
+  image.type: 'kernel-ci'
+  image.url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.16/mips/ci20_defconfig/
+  kernel.tree: mainline
+  kernel.version: v4.16
+  kernel.endian: little
+  kernel.defconfig: ci20_defconfig
+  kernel.defconfig_base: ci20_defconfig
+  kernel.arch_defconfig: mips-ci20_defconfig
+  platform.dtb: ci20.dtb
+  platform.dtb_short: ci20.dtb
+  platform.fastboot: false
+  platform.name: ci20
+  platform.mach: jz4780
+  test.plan: boot
+  git.commit: 569dbb88e80deb68974ef6fdd6a13edb9d686261
+  git.describe: v4.16
+  git.branch: master
+  git.url: http://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+  device.type: ci20
+  job.arch: mips
+  job.name: mainline-master-v4.16-mips-ci20_defconfig-ci20.dtb-ci20-boot
+  job.kernel_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.16/mips/ci20_defconfig/zImage?raw=true
+  job.kernel_image: zImage
+  job.modules_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.16/mips/ci20_defconfig/modules.tar.xz?raw=true
+  job.initrd_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/mipsel/rootfs.cpio.gz?raw=true
+  job.nfsrootfs_url: None
+  job.dtb_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.16/mips/ci20_defconfig/dtbs/ingenic/ci20.dtb?raw=true
+
+device_type: ci20
+
+job_name: mainline-master-v4.16-mips-ci20_defconfig-ci20.dtb-ci20-boot
+timeouts:
+  job:
+    minutes: 10
+  action:
+   minutes: 5
+  actions:
+    power-off:
+      seconds: 30
+priority: high
+visibility: public
+
+actions:
+- deploy:
+    timeout:
+      minutes: 2
+    to: tftp
+    kernel:
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.16/mips/ci20_defconfig/zImage?raw=true
+      type: zimage
+    ramdisk:
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/mipsel/rootfs.cpio.gz?raw=true
+      compression: gz
+    modules:
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.16/mips/ci20_defconfig/modules.tar.xz?raw=true
+      compression: xz
+    dtb:
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.16/mips/ci20_defconfig/dtbs/ci20.dtb?raw=true
+    os: oe
+
+- boot:
+    timeout:
+      minutes: 5
+    method: u-boot
+    commands: ramdisk
+    prompts:
+      - 'linaro-test'
+      - 'root@debian:~#'
+      - '/ #'

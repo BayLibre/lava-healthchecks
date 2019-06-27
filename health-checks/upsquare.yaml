@@ -18,10 +18,10 @@ actions:
       minutes: 2
     to: tftp
     kernel:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/next/master/next-20190211/x86_64/bzImage?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/next/master/next-20190211/x86_64/bzImage?raw=true
       type: image
     ramdisk:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/x86/rootfs.cpio.gz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/x86/rootfs.cpio.gz?raw=true
       compression: gz
     os: oe
 

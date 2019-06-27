@@ -18,16 +18,16 @@ actions:
       minutes: 2
     to: tftp
     kernel:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-4.17.y/v4.17.14/arm/multi_v7_defconfig/zImage?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-4.17.y/v4.17.14/arm/multi_v7_defconfig/zImage?raw=true
       type: zimage
     ramdisk:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/armel/rootfs.cpio.gz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/armel/rootfs.cpio.gz?raw=true
       compression: gz
     modules:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-4.17.y/v4.17.14/arm/multi_v7_defconfig/modules.tar.xz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-4.17.y/v4.17.14/arm/multi_v7_defconfig/modules.tar.xz?raw=true
       compression: xz
     dtb:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-4.17.y/v4.17.14/arm/multi_v7_defconfig/dtbs/tegra124-jetson-tk1.dtb?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-4.17.y/v4.17.14/arm/multi_v7_defconfig/dtbs/tegra124-jetson-tk1.dtb?raw=true
     os: oe
 
 - boot:

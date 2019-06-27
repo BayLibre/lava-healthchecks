@@ -1,6 +1,6 @@
 metadata:
   image.type: 'kernel-ci'
-  image.url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/
+  image.url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/
   kernel.tree: mainline
   kernel.version: v4.14-rc8
   kernel.endian: little
@@ -20,12 +20,12 @@ metadata:
   device.type: imx6q-sabrelite
   job.arch: arm
   job.name: mainline-master-v4.14-rc8-arm-multi_v7_defconfig-imx6q-sabrelite.dtb-imx6q-sabrelite-boot
-  job.kernel_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/zImage?raw=true
+  job.kernel_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/zImage?raw=true
   job.kernel_image: zImage?raw=true
-  job.modules_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/modules.tar.xz?raw=true
-  job.initrd_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/armel/rootfs.cpio.gz?raw=true
+  job.modules_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/modules.tar.xz?raw=true
+  job.initrd_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/armel/rootfs.cpio.gz?raw=true
   job.nfsrootfs_url: None
-  job.dtb_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/dtbs/imx6q-sabrelite.dtb?raw=true
+  job.dtb_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/dtbs/imx6q-sabrelite.dtb?raw=true
 
 device_type: imx6q-sabrelite
 
@@ -51,16 +51,16 @@ actions:
       minutes: 2
     to: tftp
     kernel:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/zImage?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/zImage?raw=true
       type: zimage
     ramdisk:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/armel/rootfs.cpio.gz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/armel/rootfs.cpio.gz?raw=true
       compression: gz
     modules:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/modules.tar.xz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/modules.tar.xz?raw=true
       compression: xz
     dtb:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/dtbs/imx6q-sabrelite.dtb?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master//mainline/master/v4.14-rc8/arm/multi_v7_defconfig/dtbs/imx6q-sabrelite.dtb?raw=true
     os: oe
 
 - boot:

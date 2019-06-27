@@ -18,16 +18,16 @@ actions:
       minutes: 2
     to: tftp
     kernel:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-4.18.y/v4.18.16/arm64/defconfig/Image?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-4.18.y/v4.18.16/arm64/defconfig/Image?raw=true
       type: image
     ramdisk:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/arm64/rootfs.cpio.gz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/arm64/rootfs.cpio.gz?raw=true
       compression: gz
     modules:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-4.18.y/v4.18.16/arm64/defconfig/modules.tar.xz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-4.18.y/v4.18.16/arm64/defconfig/modules.tar.xz?raw=true
       compression: xz
     dtb:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-4.18.y/v4.18.16/arm64/defconfig/dtbs/amlogic/meson-gxbb-p200.dtb?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-4.18.y/v4.18.16/arm64/defconfig/dtbs/amlogic/meson-gxbb-p200.dtb?raw=true
     os: oe
 
 - boot:

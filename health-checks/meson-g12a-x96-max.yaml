@@ -18,16 +18,16 @@ actions:
       minutes: 2
     to: tftp
     kernel:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/next/master/next-20190215/arm64/defconfig/gcc-7/Image?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/next/master/next-20190215/arm64/defconfig/gcc-7/Image?raw=true
       type: image
     ramdisk:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/kci-2018.05/arm64/base/rootfs.cpio.gz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/kci-2018.05/arm64/base/rootfs.cpio.gz?raw=true
       compression: gz
     modules:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/next/master/next-20190215/arm64/defconfig/gcc-7/modules.tar.xz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/next/master/next-20190215/arm64/defconfig/gcc-7/modules.tar.xz?raw=true
       compression: xz
     dtb:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/next/master/next-20190215/arm64/defconfig/gcc-7/dtbs/amlogic/meson-g12a-x96-max.dtb?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/next/master/next-20190215/arm64/defconfig/gcc-7/dtbs/amlogic/meson-g12a-x96-max.dtb?raw=true
     os: oe
 
 - boot:

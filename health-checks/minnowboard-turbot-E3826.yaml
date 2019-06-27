@@ -3,7 +3,7 @@
 
 metadata:
   image.type: 'kernel-ci'
-  image.url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/
+  image.url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/
   kernel.tree: stable
   kernel.version: v5.0.5
   kernel.endian: little
@@ -23,10 +23,10 @@ metadata:
   device.type: minnowboard-turbot-E3826
   job.arch: x86_64
   job.name: stable-linux-5.0.y-v5.0.5-x86_64-x86_64_defconfig/gcc-7-no-dtb-minnowboard-turbot-E3826-boot
-  job.kernel_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/bzImage?raw=true
+  job.kernel_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/bzImage?raw=true
   job.kernel_image: bzImage?raw=true
-  job.modules_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/modules.tar.xz?raw=true
-  job.initrd_url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/kci-2018.05/x86_64/base/rootfs.cpio.gz?raw=true
+  job.modules_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/modules.tar.xz?raw=true
+  job.initrd_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/kci-2018.05/x86_64/base/rootfs.cpio.gz?raw=true
   job.nfsrootfs_url: None
   job.dtb_url: None
 
@@ -60,13 +60,13 @@ actions:
       minutes: 2
     to: tftp
     kernel:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/bzImage?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/bzImage?raw=true
       type: bzimage
     ramdisk:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/kci-2018.05/x86_64/base/rootfs.cpio.gz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/kci-2018.05/x86_64/base/rootfs.cpio.gz?raw=true
       compression: gz
     modules:
-      url: https://github.com/Baylibre/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/modules.tar.xz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.0.y/v5.0.5/x86_64/x86_64_defconfig/gcc-7/modules.tar.xz?raw=true
       compression: xz
     os: oe
 
