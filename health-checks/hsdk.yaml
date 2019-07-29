@@ -3,9 +3,9 @@
 
 metadata:
   image.type: 'kernel-ci'
-  image.url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.1.y/v5.1.14/arc/hsdk_defconfig/gcc-8/
+  image.url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.4/arc/hsdk_defconfig/gcc-8/
   kernel.tree: stable
-  kernel.version: v5.1.14
+  kernel.version: v5.2.4
   kernel.endian: little
   kernel.defconfig: hsdk_defconfig
   kernel.defconfig_base: hsdk_defconfig
@@ -16,21 +16,23 @@ metadata:
   platform.name: hsdk
   platform.mach: arc
   test.plan: boot
-  git.commit: 5f0a74b4685567c2416d7bba1b5bc9d32f598fc3
-  git.describe: v5.1.14
-  git.branch: linux-5.1.y
+  git.commit: fc89179bfa10dd243fce24af71cf622267f31f2f
+  git.describe: v5.2.4
+  git.branch: linux-5.2.y
   git.url: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
   device.type: hsdk
   job.arch: arc
-  job.name: stable-linux-5.1.y-v5.1.14-arc-hsdk_defconfig-gcc-8-hsdk.dtb-hsdk-boot
-  job.kernel_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.1.y/v5.1.14/arc/hsdk_defconfig/gcc-8/uImage.gz
-  job.kernel_image: uImage.gz
-  job.modules_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.1.y/v5.1.14/arc/hsdk_defconfig/gcc-8/modules.tar.xz?raw=true
+  job.name: stable-linux-5.2.y-v5.2.4-arc-hsdk_defconfig-gcc-8-hsdk.dtb-hsdk-boot
+  job.kernel_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.4/arc/hsdk_defconfig/gcc-8/uImage?raw=true
+  job.kernel_image: uImage?raw=true
+  job.modules_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.4/arc/hsdk_defconfig/gcc-8/modules.tar.xz?raw=true
   job.initrd_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/kci-2019.02-2-gefc755ba4a02/arc/base/rootfs.cpio.gz?raw=true
   job.nfsrootfs_url: None
-  job.dtb_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.1.y/v5.1.14/arc/hsdk_defconfig/gcc-8/dtbs/hsdk.dtb?raw=true
-  job.file_server_resource: stable/linux-5.1.y/v5.1.14/arc/hsdk_defconfig/gcc-8
+  job.dtb_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.4/arc/hsdk_defconfig/gcc-8/dtbs/hsdk.dtb?raw=true
+  job.file_server_resource: stable/linux-5.2.y/v5.2.4/arc/hsdk_defconfig/gcc-8
   job.build_environment: gcc-8
+
+
 
 
 
@@ -39,8 +41,12 @@ metadata:
 device_type: hsdk
 
 
+context:
+  extra_kernel_args: "console_msg_format=syslog"
 
-job_name: Health Check for hsdk with v5.1.14
+
+
+job_name: Health Check for hsdk with v5.2.4
 timeouts:
   job:
     minutes: 10
@@ -62,16 +68,16 @@ actions:
       minutes: 10
     to: tftp
     kernel:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.1.y/v5.1.14/arc/hsdk_defconfig/gcc-8/uImage.gz
-      type: uimage.gz
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.4/arc/hsdk_defconfig/gcc-8/uImage?raw=true
+      type: uimage
     ramdisk:
       url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/kci-2019.02-2-gefc755ba4a02/arc/base/rootfs.cpio.gz?raw=true
       compression: gz
     modules:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.1.y/v5.1.14/arc/hsdk_defconfig/gcc-8/modules.tar.xz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.4/arc/hsdk_defconfig/gcc-8/modules.tar.xz?raw=true
       compression: xz
     dtb:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.1.y/v5.1.14/arc/hsdk_defconfig/gcc-8/dtbs/hsdk.dtb?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.4/arc/hsdk_defconfig/gcc-8/dtbs/hsdk.dtb?raw=true
     os: oe
 
 
