@@ -10,25 +10,25 @@ metadata:
   kernel.defconfig: defconfig
   kernel.defconfig_base: defconfig
   kernel.arch_defconfig: arm64-defconfig
-  platform.dtb: amlogic/meson-g12a-sei510.dtb?raw=true
-  platform.dtb_short: meson-g12a-sei510.dtb?raw=true
-  platform.fastboot: true
-  platform.name: meson-g12a-sei510
+  platform.dtb: amlogic/meson-gxm-q200.dtb?raw=true
+  platform.dtb_short: meson-gxm-q200.dtb?raw=true
+  platform.fastboot: false
+  platform.name: meson-gxm-q200
   platform.mach: amlogic
   test.plan: boot
   git.commit: 56fd0c9f54730c7049774c0aa2a73151b628b735
   git.describe: v5.2.20
   git.branch: linux-5.2.y
   git.url: https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
-  device.type: meson-g12a-sei510
+  device.type: meson-gxm-q200
   job.arch: arm64
-  job.name: stable-linux-5.2.y-v5.2.20-arm64-defconfig-gcc-8-meson-g12a-sei510.dtb-meson-g12a-sei510-boot
+  job.name: stable-linux-5.2.y-v5.2.20-arm64-defconfig-gcc-8-meson-gxm-q200.dtb-meson-gxm-q200-boot
   job.kernel_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.20/arm64/defconfig/gcc-8/Image?raw=true
   job.kernel_image: Image?raw=true
   job.modules_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.20/arm64/defconfig/gcc-8/modules.tar.xz?raw=true
   job.initrd_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/images/rootfs/buildroot/kci-2019.02-8-gd700ebb99e8f/arm64/base/rootfs.cpio.gz?raw=true
   job.nfsrootfs_url: None
-  job.dtb_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.20/arm64/defconfig/gcc-8/dtbs/amlogic/meson-g12a-sei510.dtb?raw=true
+  job.dtb_url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.20/arm64/defconfig/gcc-8/dtbs/amlogic/meson-gxm-q200.dtb?raw=true
   job.file_server_resource: stable/linux-5.2.y/v5.2.20/arm64/defconfig/gcc-8
   job.build_environment: gcc-8
 
@@ -38,15 +38,15 @@ metadata:
 
 
 
-device_type: meson-g12a-sei510
+device_type: meson-gxm-q200
 
 
 context:
-  extra_kernel_args: "console_msg_format=syslog"
+  extra_kernel_args: console_msg_format=syslog
 
 
 
-job_name: Health Check for meson-g12a-sei510 with v5.2.20
+job_name: Health Check for meson-gxm-q200 with v5.2.20
 timeouts:
   job:
     minutes: 10
@@ -77,7 +77,7 @@ actions:
       url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.20/arm64/defconfig/gcc-8/modules.tar.xz?raw=true
       compression: xz
     dtb:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.20/arm64/defconfig/gcc-8/dtbs/amlogic/meson-g12a-sei510.dtb?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/linux-5.2.y/v5.2.20/arm64/defconfig/gcc-8/dtbs/amlogic/meson-gxm-q200.dtb?raw=true
     os: oe
 
 
