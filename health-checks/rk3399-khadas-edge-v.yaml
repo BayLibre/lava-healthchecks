@@ -1,33 +1,33 @@
 metadata:
   image.type: montjoie-ci
   kernel.tree: mainline
-  kernel.version: v6.13.9
+  kernel.version: v6.13.7
   kernel.endian: little
-  kernel.defconfig: sunxi_defconfig
-  kernel.defconfig_base: sunxi_defconfig
-  kernel.arch_defconfig: arm-montjoie_defconfig
-  platform.dtb: allwinner/sun7i-a20-cubieboard2.dtb
-  platform.dtb_short: allwinner/sun7i-a20-cubieboard2.dtb
+  kernel.defconfig: defconfig
+  kernel.defconfig_base: defconfig
+  kernel.arch_defconfig: arm64-montjoie_defconfig
+  platform.dtb: rockchip/rk3399-khadas-edge-v.dtb
+  platform.dtb_short: rockchip/rk3399-khadas-edge-v.dtb
   platform.fastboot: false
-  platform.name: sun7i-a20-cubieboard2
-  platform.mach: sunxi
+  platform.name: rk3399-khadas-edge-v
+  platform.mach: rockchip
   test.plan: boot
   test.plan_variant: hc
-  git.commit: 0699da87b871db5ebcf7d91b3bb3e86b790fd981
-  git.describe: v6.13.9
+  git.commit: 648e04a805652f513af04b47035cde896addf9b0
+  git.describe: v6.13.7
   git.branch: HEAD
   git.url: http://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
-  device.type: sun7i-a20-cubieboard2
-  job.arch: arm
-  job.kernel_image: zImage
-  job.build_environment: Gentoo_armv7a-hf
+  device.type: rk3399-khadas-edge-v
+  job.arch: arm64
+  job.kernel_image: Image
+  job.build_environment: Gentoo_crossdev_ARM64
   build.overlays: None
-  build.toolchain: Gentoo_armv7a-hf
-  job.file_server_resource: arm-sunxi-defconfig+Gentoo_armv7a-hf+None/sun7i-a20-cubieboard2
-device_type: sun7i-a20-cubieboard2
+  build.toolchain: Gentoo_crossdev_ARM64
+  job.file_server_resource: arm64-default-defconfig+Gentoo_crossdev_ARM64+None/rk3399-khadas-edge-v
+device_type: rk3399-khadas-edge-v
 context:
   extra_kernel_args: ip=dhcp
-job_name: Health Check for sun7i-a20-cubieboard2 with v6.13.9
+job_name: Health Check for rk3399-khadas-edge-v with v6.13.7
 timeouts:
   job:
     minutes: 5
@@ -44,16 +44,16 @@ actions:
       minutes: 5
     to: tftp
     kernel:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/arm/sunxi/defconfig/v6.13.9/zImage?raw=true
-      type: zimage
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.13.7/Image?raw=true
+      type: image
     ramdisk:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/rootfs/armel/rootfs.cpio.gz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/rootfs/arm64/rootfs.cpio.gz?raw=true
       compression: gz
     modules:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/arm/sunxi/defconfig/v6.13.9/modules.tar.gz?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.13.7/modules.tar.gz?raw=true
       compression: gz
     dtb:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/arm/sunxi/defconfig/v6.13.9/dts/allwinner/sun7i-a20-cubieboard2.dtb?raw=true
+      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.13.7/dts/rockchip/rk3399-khadas-edge-v.dtb?raw=true
     os: oe
 - boot:
     timeout:
