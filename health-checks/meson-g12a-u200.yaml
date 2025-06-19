@@ -44,16 +44,16 @@ actions:
       minutes: 5
     to: tftp
     kernel:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.15.2/Image?raw=true
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.15.2/Image?raw=true
       type: image
     ramdisk:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/rootfs/arm64/rootfs.cpio.gz?raw=true
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/rootfs/arm64/rootfs.cpio.gz?raw=true
       compression: gz
     modules:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.15.2/modules.tar.gz?raw=true
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.15.2/modules.tar.gz?raw=true
       compression: gz
     dtb:
-      url: https://github.com/montjoie/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.15.2/dts/amlogic/meson-g12a-u200.dtb?raw=true
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.15.2/dts/amlogic/meson-g12a-u200.dtb?raw=true
     os: oe
 - boot:
     timeout:
