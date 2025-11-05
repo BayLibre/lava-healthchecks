@@ -1,0 +1,94 @@
+metadata:
+  image.type: montjoie-ci
+  kernel.tree: mainline
+  kernel.version: v6.17.7
+  kernel.endian: little
+  kernel.defconfig: defconfig
+  kernel.defconfig_base: defconfig
+  kernel.arch_defconfig: arm64-montjoie_defconfig
+  platform.dtb: allwinner/sun55i-a527-cubie-a5e.dtb
+  platform.dtb_short: allwinner/sun55i-a527-cubie-a5e.dtb
+  platform.fastboot: false
+  platform.name: sun55i-a527-cubie-a5e
+  platform.mach: sunxi
+  test.plan: boot
+  test.plan_variant: hc
+  git.commit: 7660ce69123ea73b22930fcf20d995ad310049ef
+  git.describe: v6.17.7
+  git.branch: HEAD
+  git.url: http://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+  device.type: sun55i-a527-cubie-a5e
+  job.arch: arm64
+  job.kernel_image: Image
+  job.build_environment: Gentoo_crossdev_ARM64
+  build.overlays: None
+  build.toolchain: Gentoo_crossdev_ARM64
+  job.file_server_resource: arm64-default-defconfig+Gentoo_crossdev_ARM64+None/sun55i-a527-cubie-a5e
+device_type: sun55i-a527-cubie-a5e
+context:
+  extra_kernel_args: ip=dhcp
+job_name: Health Check for sun55i-a527-cubie-a5e with v6.17.7
+timeouts:
+  job:
+    minutes: 5
+  action:
+    minutes: 5
+  actions:
+    power-off:
+      seconds: 30
+priority: high
+visibility: public
+actions:
+- deploy:
+    timeout:
+      minutes: 5
+    to: tftp
+    kernel:
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.17.7/Image?raw=true
+      type: image
+    ramdisk:
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/rootfs/arm64/rootfs.cpio.gz?raw=true
+      compression: gz
+    modules:
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.17.7/modules.tar.gz?raw=true
+      compression: gz
+    dtb:
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.17.7/dts/allwinner/sun55i-a527-cubie-a5e.dtb?raw=true
+    os: oe
+- boot:
+    timeout:
+      minutes: 5
+    method: u-boot
+    commands: ramdisk
+    prompts:
+    - '/ #'
+    - '~ #'
+    - sh-5.1#
+- test:
+    timeout:
+      minutes: 1
+    definitions:
+    - repository:
+        metadata:
+          format: Lava-Test Test Definition 1.0
+          name: baseline
+          description: Minimal HC test
+          os:
+          - debian
+          scope:
+          - functional
+          environment:
+          - lava-test-shell
+        run:
+          steps:
+          - sleep 10
+          - lsusb
+          - ip a
+          - lsmod
+          - "for level in warn err; do\n  dmesg --level=$level --notime -x -k > dmesg.$level\ndone\n"
+          - "for level in crit alert emerg; do\n  dmesg --level=$level --notime -x -k > dmesg.$level\n  test -s dmesg.$level && res=fail || res=pass\n  count=$(cat dmesg.$level | wc -l)\n  lava-test-case $level \\\n    --result $res \\\n    --measurement $count \\\n    --units lines\ndone\n"
+          - cat dmesg.emerg dmesg.alert dmesg.crit dmesg.err dmesg.warn
+      lava-signal: kmsg
+      from: inline
+      name: healthcheck
+      path: inline/hc.yaml
