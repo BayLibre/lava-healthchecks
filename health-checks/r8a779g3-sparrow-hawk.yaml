@@ -1,0 +1,66 @@
+metadata:
+  image.type: montjoie-ci
+  kernel.tree: mainline
+  kernel.version: v6.18.1
+  kernel.endian: little
+  kernel.defconfig: defconfig
+  kernel.defconfig_base: defconfig
+  kernel.arch_defconfig: arm64-montjoie_defconfig
+  platform.dtb: renesas/r8a779g3-sparrow-hawk.dtb
+  platform.dtb_short: renesas/r8a779g3-sparrow-hawk.dtb
+  platform.fastboot: false
+  platform.name: r8a779g3-sparrow-hawk
+  platform.mach: renesas
+  test.plan: boot
+  test.plan_variant: none
+  git.commit: 25442251cbda7590d87d8203a8dc1ddf2c93de61
+  git.describe: v6.18.1
+  git.branch: HEAD
+  git.url: http://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+  device.type: r8a779g3-sparrow-hawk
+  job.arch: arm64
+  job.kernel_image: Image
+  job.build_environment: Gentoo_crossdev_ARM64
+  build.overlays: None
+  build.toolchain: Gentoo_crossdev_ARM64
+  job.file_server_resource: arm64-default-defconfig+Gentoo_crossdev_ARM64+None/r8a779g3-sparrow-hawk
+device_type: r8a779g3-sparrow-hawk
+context:
+  extra_kernel_args: ip=dhcp
+job_name: Health Check for r8a779g3-sparrow-hawk with v6.18.1
+timeouts:
+  job:
+    minutes: 5
+  action:
+    minutes: 5
+  actions:
+    power-off:
+      seconds: 30
+priority: high
+visibility: public
+actions:
+- deploy:
+    timeout:
+      minutes: 5
+    to: tftp
+    kernel:
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.18.1/Image?raw=true
+      type: image
+    ramdisk:
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/rootfs/arm64/rootfs.cpio.gz?raw=true
+      compression: gz
+    modules:
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.18.1/modules.tar.gz?raw=true
+      compression: gz
+    dtb:
+      url: https://github.com/baylibre/lava-healthchecks-binary/blob/master/stable/arm64/default/defconfig/v6.18.1/dts/renesas/r8a779g3-sparrow-hawk.dtb?raw=true
+    os: oe
+- boot:
+    timeout:
+      minutes: 5
+    method: u-boot
+    commands: ramdisk
+    prompts:
+    - '/ #'
+    - '~ #'
+    - sh-5.1#
